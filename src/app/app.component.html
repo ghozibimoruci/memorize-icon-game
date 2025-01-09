@@ -1,0 +1,68 @@
+<div class="container py-5">
+  <!-- TITLE START -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-auto mb-4">
+      <h1 class="w-auto mb-0">
+        Memorize Icon Game
+      </h1>
+    </div>
+  </div>
+  <!-- TITLE END -->
+
+  <!-- SELECT LEVEL START -->
+  <div class="row justify-content-center mt-1" *ngIf="!gameSize">
+    <div class="col-12 col-md-10 col-lg-6">
+      <div class="row justify-content-between">
+        <div class="col-auto">
+          <button class="btn btn-primary" (click)="selectLevel(4)">
+            Easy
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary" (click)="selectLevel(8)">
+            Medium
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-primary" (click)="selectLevel(12)">
+            Hard
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SELECT LEVEL END -->
+
+  <!-- GAME PANEL START -->
+  <div class="game-panel" *ngIf="gameSize">
+    <!-- TIMER START -->
+    <div class="row justify-content-center mb-2">
+      <div class="col-auto">
+        <div class="timer-container">
+          <span>{{ formattedTime }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- TIMER END -->
+
+    <!-- GAME TILE START -->
+    <div
+      class="row justify-content-center game-tile"
+      [ngClass]="gameSize == 4 ? 'easy' : gameSize == 8 ? 'medium':'hard'"
+      *ngFor="let game of gamesArray; let i = index"
+    >
+      <div class="col-auto p-2" *ngFor="let icon of game; let j = index">
+        <button
+          mat-icon-button
+          class="d-flex p-2 border cl-games-primary rounded-circle"
+          [ngClass]="{ 'bg-games-primary': !icon.selected }"
+          (click)="selectIcon(i, j)"
+        >
+          <mat-icon fontIcon="{{icon.iconName}}"></mat-icon>
+        </button>
+      </div>
+    </div>
+    <!-- GAME TILE END -->
+  </div>
+  <!-- GAME PANEL END -->
+</div>

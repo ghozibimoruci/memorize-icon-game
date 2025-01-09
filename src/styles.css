@@ -1,0 +1,210 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+/* custom-bootstrap.css */
+
+/* ================================
+   Custom Bootstrap Color Palette
+   Primary: #ec0474
+   Secondary: #a46dac
+   ================================ */
+
+/* Base Color Overrides */
+:root {
+    /* Primary Color */
+    --bs-primary: #ec0474;
+    --bs-primary-rgb: 236, 4, 116;
+  
+    /* Secondary Color */
+    --bs-secondary: #a46dac;
+    --bs-secondary-rgb: 164, 109, 172;
+  
+    /* Success Color (Optional: You can keep default or customize) */
+    --bs-success: #198754;
+    --bs-success-rgb: 25, 135, 84;
+  
+    /* Danger Color (Optional: You can keep default or customize) */
+    --bs-danger: #dc3545;
+    --bs-danger-rgb: 220, 53, 69;
+  
+    /* Warning Color (Optional: You can keep default or customize) */
+    --bs-warning: #ffc107;
+    --bs-warning-rgb: 255, 193, 7;
+  
+    /* Info Color (Optional: You can keep default or customize) */
+    --bs-info: #0dcaf0;
+    --bs-info-rgb: 13, 202, 240;
+  
+    /* Light and Dark Colors (Optional: You can keep default or customize) */
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+  
+    /* Body Background and Text Color (Optional: You can keep default or customize) */
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #212529;
+  
+    /* Link Colors */
+    --bs-link-color: var(--bs-primary);
+    --bs-link-hover-color: #d4006c; /* Slightly darker shade of primary */
+  
+    /* Borders */
+    --bs-border-color: #dee2e6;
+  
+    /* Components Specific Overrides */
+  
+    /* Buttons */
+    /* Primary Button */
+    --bs-btn-primary-bg: var(--bs-primary);
+    --bs-btn-primary-border: var(--bs-primary);
+    --bs-btn-primary-hover-bg: #d30068; /* Darker shade for hover */
+    --bs-btn-primary-hover-border: #c1005f;
+  
+    /* Secondary Button */
+    --bs-btn-secondary-bg: var(--bs-secondary);
+    --bs-btn-secondary-border: var(--bs-secondary);
+    --bs-btn-secondary-hover-bg: #9339a3; /* Darker shade for hover */
+    --bs-btn-secondary-hover-border: #853292;
+  
+    /* Alerts */
+    /* Primary Alert */
+    --bs-alert-primary-bg: rgba(var(--bs-primary-rgb), 0.1);
+    --bs-alert-primary-border: var(--bs-primary);
+    --bs-alert-primary-color: var(--bs-primary);
+  
+    /* Secondary Alert */
+    --bs-alert-secondary-bg: rgba(var(--bs-secondary-rgb), 0.1);
+    --bs-alert-secondary-border: var(--bs-secondary);
+    --bs-alert-secondary-color: var(--bs-secondary);
+  
+    /* Badges */
+    /* Primary Badge */
+    --bs-badge-primary-bg: var(--bs-primary);
+    --bs-badge-primary-color: #ffffff;
+  
+    /* Secondary Badge */
+    --bs-badge-secondary-bg: var(--bs-secondary);
+    --bs-badge-secondary-color: #ffffff;
+  
+    /* Navbar */
+    --bs-navbar-bg: var(--bs-primary);
+    --bs-navbar-color: #ffffff;
+  
+    /* Inputs */
+    --bs-input-focus-border-color: var(--bs-primary);
+    --bs-input-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  
+    /* Progress Bars */
+    --bs-progress-bg: var(--bs-primary);
+  
+    /* Pagination */
+    --bs-pagination-link-border-color: var(--bs-primary);
+    --bs-pagination-link-color: var(--bs-primary);
+    --bs-pagination-link-active-bg: var(--bs-primary);
+    --bs-pagination-link-active-color: #ffffff;
+    --bs-pagination-link-active-border-color: var(--bs-primary);
+  
+    /* Toggle Switches */
+    --bs-toggle-color: var(--bs-body-color);
+    --bs-toggle-bg: var(--bs-secondary);
+    --bs-toggle-border: var(--bs-secondary);
+    --bs-toggle-hover-bg: #9339a3;
+    --bs-toggle-active-bg: #853292;
+  
+    /* Tooltips */
+    --bs-tooltip-bg: var(--bs-primary);
+    --bs-tooltip-color: #ffffff;
+  
+    /* Popovers */
+    --bs-popover-bg: #ffffff;
+    --bs-popover-color: #212529;
+    --bs-popover-border-color: #dee2e6;
+  
+    /* Modals */
+    --bs-modal-bg: #ffffff;
+    --bs-modal-color: #212529;
+  
+    /* Forms */
+    --bs-form-control-color: #212529;
+    --bs-form-control-bg: #ffffff;
+    --bs-form-control-border-color: #ced4da;
+    --bs-form-control-focus-border-color: var(--bs-primary);
+    --bs-form-control-focus-box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+  
+    /* Carousel Controls */
+    --bs-carousel-control-color: var(--bs-primary);
+    --bs-carousel-control-icon-size: 2rem;
+  
+    /* Toasts */
+    --bs-toast-bg: #ffffff;
+    --bs-toast-color: #212529;
+    --bs-toast-border-color: #dee2e6;
+  
+    /* Additional Components */
+    /* Add more component-specific variables here if needed */
+  }
+/* custom-bootstrap.css */
+
+/* ================================
+   Button Color Overrides
+   ================================ */
+
+/* Primary Button Overrides */
+.btn-primary {
+    /* Text Color */
+    --bs-btn-color: #fff;
+  
+    /* Background Color */
+    --bs-btn-bg: var(--bs-primary);
+  
+    /* Border Color */
+    --bs-btn-border-color: var(--bs-primary);
+  
+    /* Hover States */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #d30068; /* Slightly darker shade of #ec0474 */
+    --bs-btn-hover-border-color: #c1005f;
+  
+    /* Focus Shadow */
+    --bs-btn-focus-shadow-rgb: 236, 4, 116;
+  
+    /* Active States */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #c1005f; /* Even darker shade */
+    --bs-btn-active-border-color: #b00055;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  
+    /* Disabled States */
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-primary);
+    --bs-btn-disabled-border-color: var(--bs-primary);
+  }
+  
+  /* Secondary Button Overrides */
+  .btn-secondary {
+    /* Text Color */
+    --bs-btn-color: #fff;
+  
+    /* Background Color */
+    --bs-btn-bg: var(--bs-secondary);
+  
+    /* Border Color */
+    --bs-btn-border-color: var(--bs-secondary);
+  
+    /* Hover States */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #9339a3; /* Slightly darker shade of #a46dac */
+    --bs-btn-hover-border-color: #853292;
+  
+    /* Focus Shadow */
+    --bs-btn-focus-shadow-rgb: 164, 109, 172;
+  
+    /* Active States */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #853292; /* Even darker shade */
+    --bs-btn-active-border-color: #752e7c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  
+    /* Disabled States */
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--bs-secondary);
+    --bs-btn-disabled-border-color: var(--bs-secondary);
+  }
+    

@@ -1,0 +1,31 @@
+.bg-games-primary {
+    background-color: #ec0474;
+  }
+  .cl-games-primary {
+    color: #ec0474;
+  }
+  .timer-container {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  .timer-container span {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 80px;
+  }
+  .game-tile.easy{
+    max-width: 216px;
+  }
+  .game-tile.medium{
+    max-width: 432px;
+  }
+  .game-tile.hard{
+    max-width: 648px;
+  }
