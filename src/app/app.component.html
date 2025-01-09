@@ -13,18 +13,18 @@
   <div class="row justify-content-center mt-1" *ngIf="!gameSize">
     <div class="col-12 col-md-10 col-lg-6">
       <div class="row justify-content-between">
-        <div class="col-auto">
-          <button class="btn btn-primary" (click)="selectLevel(4)">
+        <div class="col-12 col-sm-auto mb-2 mb-sm-0">
+          <button class="btn btn-primary w-100 px-4" (click)="selectLevel(4)">
             Easy
           </button>
         </div>
-        <div class="col-auto">
-          <button class="btn btn-primary" (click)="selectLevel(8)">
+        <div class="col-12 col-sm-auto mb-2 mb-sm-0">
+          <button class="btn btn-primary w-100 px-4" (click)="selectLevel(8)">
             Medium
           </button>
         </div>
-        <div class="col-auto">
-          <button class="btn btn-primary" (click)="selectLevel(12)">
+        <div class="col-12 col-sm-auto mb-2 mb-sm-0">
+          <button class="btn btn-primary w-100 px-4" (click)="selectLevel(12)">
             Hard
           </button>
         </div>
@@ -49,14 +49,13 @@
     <div
       class="row justify-content-center game-tile"
       [ngClass]="gameSize == 4 ? 'easy' : gameSize == 8 ? 'medium':'hard'"
-      *ngFor="let game of gamesArray; let i = index"
     >
-      <div class="col-auto p-2" *ngFor="let icon of game; let j = index">
+      <div class="col-auto p-2" *ngFor="let icon of gamesArray; let i = index">
         <button
           mat-icon-button
           class="d-flex p-2 border cl-games-primary rounded-circle"
           [ngClass]="{ 'bg-games-primary': !icon.selected }"
-          (click)="selectIcon(i, j)"
+          (click)="selectIcon(i)"
         >
           <mat-icon fontIcon="{{icon.iconName}}"></mat-icon>
         </button>

@@ -20,6 +20,9 @@
     display: inline-block;
     min-width: 80px;
   }
+  .game-tile{
+    margin: auto;
+  }
   .game-tile.easy{
     max-width: 216px;
   }

@@ -47,9 +47,8 @@ export class AppComponent {
   gamesArray: {
     selected: boolean;
     iconName: string;
-  }[][] = [];
+  }[] = [];
   iconPairSelected: {
-    indexArray: number;
     indexIcon: number;
     iconName: string;
   }[] = [];
@@ -84,16 +83,14 @@ export class AppComponent {
       gamesArrayToBe = gamesArrayToBe.concat(this.shuffleArray());
     }
     for (let i = 0; i < this.gameSize; i++) {
-      const gamesArrayPerItem = [];
       for (let j = 0; j < this.gameSize; j++) {
         const randomIndex = this.getRandomNumber(0, gamesArrayToBe.length - 1);
-        gamesArrayPerItem.push({
+        this.gamesArray.push({
           selected: false,
           iconName: gamesArrayToBe[randomIndex],
         });
         gamesArrayToBe.splice(randomIndex, 1);
       }
-      this.gamesArray.push(gamesArrayPerItem);
     }
   }
 
@@ -125,8 +122,8 @@ export class AppComponent {
     return shuffled;
   }
 
-  selectIcon(indexArray: number, indexIcon: number) {
-    if (this.gamesArray[indexArray][indexIcon].selected) {
+  selectIcon(indexIcon: number) {
+    if (this.gamesArray[indexIcon].selected) {
       // do nothing on selected icons
       return;
     }
@@ -135,20 +132,19 @@ export class AppComponent {
         this.iconPairSelected[0].iconName != this.iconPairSelected[1].iconName
       ) {
         this.iconPairSelected.forEach((item) => {
-          this.gamesArray[item.indexArray][item.indexIcon].selected = false;
+          this.gamesArray[item.indexIcon].selected = false;
         });
       }
       this.iconPairSelected = [];
     }
     this.iconPairSelected.push({
-      indexArray: indexArray,
       indexIcon: indexIcon,
-      iconName: this.gamesArray[indexArray][indexIcon].iconName,
+      iconName: this.gamesArray[indexIcon].iconName,
     });
-    this.gamesArray[indexArray][indexIcon].selected = true;
+    this.gamesArray[indexIcon].selected = true;
     if (this.iconPairSelected.length == 2) {
       if (
-        this.gamesArray.every((array) => array.every((icon) => icon.selected))
+        this.gamesArray.every((icon) => icon.selected)
       ) {
         setTimeout(() => {
           this.winTheGame();
@@ -191,7 +187,7 @@ export class AppComponent {
       } else {
         this.stopTimer();
         if (
-          this.gamesArray.some((array) => array.some((icon) => !icon.selected))
+          this.gamesArray.some((icon) => !icon.selected)
         ) {
           this.loseTheGame();
         }
